@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CABIN Tokyo – A Cozy Tokyo Bar Experience</title>
+  
+  <!-- Favicon (Tab Image) -->
+  <link rel="icon" type="image/webp" href="images/CabinLogo.webp" />
+  
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="CABIN is a welcoming Tokyo bar in Nakameguro with a wide whiskey selection, creative cocktails, and a relaxed atmosphere. Join us for a memorable experience.">
+  <meta name="keywords" content="Tokyo bar, whiskey, cocktails, Nakameguro, CABIN, private events, bartender, Montserrat">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Montserrat font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <style>
+    /* Global Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    html, body {
+      background-color: #121212;
+      color: #E0E0E0;
+      line-height: 1.6;
+      min-height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1A1A1A;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3, h4 {
+      color: #F0E6D2;
+      font-weight: 700;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 2rem;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: #D4A45F;
+      margin-top: 8px;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      color: #D4A45F;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background-color: #1A1A1A;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-container {
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+    }
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      margin-right: 0.5rem;
+    }
+    .nav-logo h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #F0E6D2;
+    }
+    .nav-menu a {
+      margin-left: 1rem;
+      font-size: 1rem;
+      color: #E0E0E0;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+    }
+    .nav-menu a:hover {
+      background-color: #D4A45F;
+      color: #121212;
+    }
+
+    /* Hero */
+    .hero {
+      width: 100%;
+      height: 60vh;
+      background: url("images/bg1.JPG") no-repeat center center / cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+      z-index: 1;
+      text-align: center;
+      color: #F0E6D2;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+    .hero-content p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+      font-weight: 300;
+    }
+
+    /* Paragraph + Figures */
+    p {
+      margin-bottom: 1em;
+      font-weight: 300;
+    }
+    figure {
+      margin: 2em 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #333;
+      border-radius: 4px;
+    }
+    figcaption {
+      color: #aaa;
+      font-size: 0.9em;
+      margin-top: 0.5em;
+      font-weight: 300;
+    }
+
+    /* Spacing for Lists */
+    ul {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    /* Slideshow */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      margin: 2rem auto;
+      overflow: hidden;
+    }
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+    }
+    .slideshow img:nth-child(1) {
+      animation: fade1 2.25s infinite;
+    }
+    @keyframes fade1 {
+      0%, 33% {
+        opacity: 1;
+      }
+      34%, 100% {
+        opacity: 0;
+      }
+    }
+    .slideshow img:nth-child(2) {
+      animation: fade2 2.25s infinite;
+    }
+    @keyframes fade2 {
+      0%, 33% {
+        opacity: 0;
+      }
+      34%, 66% {
+        opacity: 1;
+      }
+      67%, 100% {
+        opacity: 0;
+      }
+    }
+    .slideshow img:nth-child(3) {
+      animation: fade3 2.25s infinite;
+    }
+    @keyframes fade3 {
+      0%, 66% {
+        opacity: 0;
+      }
+      67%, 100% {
+        opacity: 1;
+      }
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      background-color: #1A1A1A;
+      color: #E0E0E0;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    .footer-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-container p {
+      font-size: 0.85rem;
+      margin: 0.5rem 0;
+      font-weight: 300;
+    }
+    .social-icons {
+      margin-top: 0.5rem;
+    }
+    .social-icons span {
+      margin-right: 0.5rem;
+    }
+    .social-icons a {
+      margin-left: 0.5rem;
+      color: #E0E0E0;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #D4A45F;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .hero {
+        height: 50vh;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .slideshow {
+        height: 250px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <!-- LOGO Image + Text -->
+        <div class="nav-logo">
+          <h1>CABIN Tokyo</h1>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Private Events</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>A Cozy Tokyo Bar Experience</h1>
+      <p>Find a riverside spot in Nakameguro that offers whiskey from around the world and creative cocktails in a calm, rustic setting.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <div class="content-container">
+
+    <!-- SECTION 1: Introduction -->
+    <h2>1. Discover a Welcoming Tokyo Bar</h2>
+    <p>
+      If you live in Tokyo or are simply exploring the city, you may know how special it feels to find a quiet haven in the midst of so much energy. At CABIN, we want to offer you that haven. We are in Nakameguro, which is one of the most scenic neighborhoods in the city. Our interior balances rustic design with modern accents. This creates a setting that is perfect for slow conversations and high-quality drinks.
+    </p>
+    <p>
+      When you step through our door, our team is glad to greet you. We guide you through our wide range of whiskeys, handcrafted cocktails, and Asian-inspired snacks that highlight seasonal flavors. We believe a bar is more than a place to drink. It is a space where people gather, share stories, and make lasting memories.
+    </p>
+    <figure>
+      <img src="images/intro.JPG" alt="CABIN Introduction" />
+      <figcaption>Our entrance in Nakameguro, where refined comfort awaits.</figcaption>
+    </figure>
+
+    <!-- SECTION 2: The Bartender & Menu Overview -->
+    <h2>2. Meet Our Bartender and See the Menu</h2>
+    <p>
+      Every great Tokyo bar has a standout bartender. At CABIN, we are fortunate to have <strong>Sullivan Gouvea</strong>. He is from São Paulo in Brazil and has more than 25 years of food and beverage experience. He has mastered the art of classic cocktails and enjoys creating new ideas that captivate the senses. He chooses each ingredient with care and takes pride in how each drink looks and tastes.
+    </p>
+    <figure>
+      <img src="images/bartender.JPG" alt="Head Bartender Sullivan Gouvea" />
+      <figcaption>Sullivan brings both skill and creativity to our bar.</figcaption>
+    </figure>
+    <p>
+      Our menu has more than whiskey, though our Japanese and Scotch offerings are a highlight. You will also find craft beers, wines, and boutique liqueurs. Try our <em>Whiskey Flights</em> to see how different bottles can spark new tastes. If you enjoy cocktails, we invite you to sample our signature choices:
+    </p>
+    <ul>
+      <li><strong>CABIN Negroni – ¥1,900</strong><br>Botanist Gin, Scarlet Amaro, Carpano Antica</li>
+      <li><strong>Gold Rush – ¥1,900</strong><br>Bruichladdich Scotch, Lemon, Honey Syrup, Chocolate Bitters</li>
+      <li><strong>Lover’s Club – ¥1,900</strong><br>Botanist Gin, Cointreau, Pisco, Raspberry, Lemon</li>
+      <li><strong>Hideaway – ¥1,900</strong><br>Mt Gay Eclipse Rum, Rye Whiskey, Dry Vermouth, Spiced Apple, Smoke Bitters</li>
+      <li><strong>Mezcal Mule – ¥1,900</strong><br>Mezcal, Ginger Syrup, Bitters, Lime, Soda</li>
+      <li><strong>Old Fashioned – ¥1,900</strong><br>Rye and Japanese Whiskey, Kokuto Sugar, Bitters</li>
+      <li><strong>Hojicha Americano – ¥1,900</strong><br>Hojicha Tea, Aperol, Carpano Antica, Fernet Branca, Soda</li>
+    </ul>
+    <p>
+      These cocktails combine tradition with a fresh perspective. Each drink is prepared with a keen eye on quality. At our Tokyo bar, we want to help you find flavors that excite your palate and make your evening special.
+    </p>
+
+    <!-- Slideshow Section for Ice Images -->
+    <h2>3. Ice That Elevates Each Drink</h2>
+    <p>
+      We pay attention to every detail, down to the type of ice we use. Good ice, cut or shaped with care, can be the difference between a normal drink and an extraordinary one. This short slideshow will show you a little of how we prepare these crystal-clear cubes.
+    </p>
+    <div class="slideshow">
+      <img src="images/Ice1.JPG" alt="Large artisanal ice cube in a glass" />
+      <img src="images/Ice2.JPG" alt="Bartender placing ice cube in the cup" />
+      <img src="images/Ice3.JPG" alt="Detailed shot of ice cube in whiskey glass" />
+    </div>
+    <p>
+      Whether you choose a neat pour of a rare whiskey or our Old Fashioned, the right ice will help keep your drink perfect from start to finish. This extra care is part of our identity as a Tokyo bar that aims to give you the best possible experience.
+    </p>
+
+    <!-- SECTION 4: Private Events & Contact Info -->
+    <h2>4. Private Events and Contact Details</h2>
+    <p>
+      Are you planning a special event in Tokyo? Our cozy space can seat up to 20 guests. We can also host 30 people with partial seating. Picture a relaxed evening lit by gentle lights and made richer by a curated menu of cocktails and spirits. This can work well for birthdays, corporate gatherings, or small wedding receptions.
+    </p>
+    <figure>
+      <img src="images/bg2.JPG" alt="CABIN's event space" />
+      <figcaption>Turn our inviting room into your own celebration space.</figcaption>
+    </figure>
+    <p>
+      Call us or book online to learn more about hosting a private event at CABIN. We will work with you to create a personal experience that leaves everyone smiling. If you want a calm night with friends, a guided whiskey tasting, or a festive party, our Tokyo bar is ready to surpass your expectations.
+    </p>
+    <p>
+      <strong>Address</strong><br>
+      1-10-23 Nakameguro Riverside Terrace 101, Meguro-ku, Tokyo 153-0061, Japan<br>
+      <a href="#">Get Directions</a>
+    </p>
+    <p>
+      <strong>Phone</strong><br>
+      <a href="tel:+81363032220">+81 3-6303-2220</a>
+    </p>
+    <p>
+      <strong>Opening Hours</strong><br>
+      Sunday to Thursday: 6pm to 12am<br>
+      Friday and Saturday: 6pm to 1am<br>
+      We only accept cashless payments.
+    </p>
+    <figure>
+      <img src="images/conclusion.JPG" alt="CABIN Contact or Conclusion" />
+      <figcaption>We look forward to giving you a warm welcome.</figcaption>
+    </figure>
+    <p>
+      You can follow us on <a href="https://www.instagram.com/cabin_nakameguro/">Instagram</a> 
+      or <a href="https://www.facebook.com/CABINNakameguro/">Facebook</a> for more updates. Thank you for choosing 
+      to spend your time at CABIN. We offer a relaxing space where you can enjoy quality drinks and a friendly 
+      atmosphere.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 CABIN. All rights reserved.</p>
+      <div class="social-icons">
+        <span>Follow us:</span>
+        <a href="https://www.instagram.com/cabin_nakameguro/">Instagram</a>
+        <a href="https://www.facebook.com/CABINNakameguro/">Facebook</a>
+      </div>
+      <p><a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
+</body>
+</html>
